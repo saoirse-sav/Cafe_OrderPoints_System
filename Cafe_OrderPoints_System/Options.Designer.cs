@@ -31,10 +31,10 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
+            btnMakeOrder = new Button();
+            btnAddCustomer = new Button();
+            btnShowHistory = new Button();
+            btnLogout = new Button();
             SuspendLayout();
             // 
             // label1
@@ -64,57 +64,60 @@
             label3.TabIndex = 2;
             label3.Text = "Hello, Dear Customer, what would you like to do?";
             // 
-            // button1
+            // btnMakeOrder
             // 
-            button1.Location = new Point(153, 194);
-            button1.Name = "button1";
-            button1.Size = new Size(196, 39);
-            button1.TabIndex = 3;
-            button1.Text = "Make an Order";
-            button1.UseVisualStyleBackColor = true;
+            btnMakeOrder.Location = new Point(153, 194);
+            btnMakeOrder.Name = "btnMakeOrder";
+            btnMakeOrder.Size = new Size(196, 39);
+            btnMakeOrder.TabIndex = 3;
+            btnMakeOrder.Text = "Make an Order";
+            btnMakeOrder.UseVisualStyleBackColor = true;
+            btnMakeOrder.Click += btnMakeOrder_Click;
             // 
-            // button2
+            // btnAddCustomer
             // 
-            button2.Location = new Point(153, 258);
-            button2.Name = "button2";
-            button2.Size = new Size(196, 39);
-            button2.TabIndex = 4;
-            button2.Text = "Add Customer";
-            button2.UseVisualStyleBackColor = true;
+            btnAddCustomer.Location = new Point(153, 258);
+            btnAddCustomer.Name = "btnAddCustomer";
+            btnAddCustomer.Size = new Size(196, 39);
+            btnAddCustomer.TabIndex = 4;
+            btnAddCustomer.Text = "Add Customer";
+            btnAddCustomer.UseVisualStyleBackColor = true;
+            btnAddCustomer.Click += btnAddCustomer_Click;
             // 
-            // button3
+            // btnShowHistory
             // 
-            button3.Location = new Point(153, 321);
-            button3.Name = "button3";
-            button3.Size = new Size(196, 39);
-            button3.TabIndex = 5;
-            button3.Text = "Show Purchase History";
-            button3.UseVisualStyleBackColor = true;
+            btnShowHistory.Location = new Point(153, 321);
+            btnShowHistory.Name = "btnShowHistory";
+            btnShowHistory.Size = new Size(196, 39);
+            btnShowHistory.TabIndex = 5;
+            btnShowHistory.Text = "Show Purchase History";
+            btnShowHistory.UseVisualStyleBackColor = true;
+            btnShowHistory.Click += btnShowHistory_Click;
             // 
-            // button4
+            // btnLogout
             // 
-            button4.Location = new Point(153, 385);
-            button4.Name = "button4";
-            button4.Size = new Size(196, 39);
-            button4.TabIndex = 6;
-            button4.Text = "Log Out";
-            button4.UseVisualStyleBackColor = true;
+            btnLogout.Location = new Point(153, 385);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(196, 39);
+            btnLogout.TabIndex = 6;
+            btnLogout.Text = "Log Out";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             // 
             // Options
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(528, 450);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnLogout);
+            Controls.Add(btnShowHistory);
+            Controls.Add(btnAddCustomer);
+            Controls.Add(btnMakeOrder);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "Options";
             Text = "Options";
-          
             ResumeLayout(false);
             PerformLayout();
         }
@@ -124,9 +127,9 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
+        private Button btnMakeOrder;
+        private Button btnAddCustomer;
+        private Button btnShowHistory;
+        private Button btnLogout;
     }
 }

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Cafe_OrderPoints_System
 {
@@ -12,7 +9,15 @@ namespace Cafe_OrderPoints_System
         public string Username { get; set; }
         public string Password { get; set; }
         public int Points { get; set; }
-        public List<OrderRecord> OrderHistory { get; set; } = new List<OrderRecord>();
+        public List<OrderRecord> OrderHistory { get; set; }
+
+        public User(string username, string password)
+        {
+            Username = username;
+            Password = password;
+            Points = 0;
+            OrderHistory = new List<OrderRecord>();
+        }
     }
 }
-    
+

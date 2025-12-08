@@ -1,13 +1,5 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Cafe_OrderPoints_System
@@ -16,6 +8,7 @@ namespace Cafe_OrderPoints_System
     {
         public static Dictionary<string, string> Users = new Dictionary<string, string>();
         public static Dictionary<string, string> Emails = new Dictionary<string, string>();
+
         public LogIn()
         {
             InitializeComponent();
@@ -26,13 +19,11 @@ namespace Cafe_OrderPoints_System
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
 
-
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("Please fill in all fields.");
                 return;
             }
-
 
             if (!Users.ContainsKey(username))
             {
@@ -40,15 +31,21 @@ namespace Cafe_OrderPoints_System
                 return;
             }
 
-
             if (Users[username] != password)
             {
                 MessageBox.Show("Incorrect password.");
                 return;
             }
 
-
             MessageBox.Show("Login successful!");
+
+            // Create actual User object
+            User currentUser = new User(username, password);
+            currentUser.Email = Emails[username];
+
+            Options opt = new Options(currentUser);
+            opt.Show();
+            this.Hide();
         }
 
         private void btnSignup_Click(object sender, EventArgs e)
@@ -56,11 +53,6 @@ namespace Cafe_OrderPoints_System
             SignUp form = new SignUp();
             form.Show();
             this.Hide();
-        }
-
-        private void LogIn_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

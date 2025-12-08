@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Cafe_OrderPoints_System
@@ -24,7 +17,6 @@ namespace Cafe_OrderPoints_System
             string password = txtPassword.Text.Trim();
             string confirm = txtConfirm.Text.Trim();
 
-
             if (string.IsNullOrWhiteSpace(email) ||
                 string.IsNullOrWhiteSpace(username) ||
                 string.IsNullOrWhiteSpace(password))
@@ -39,28 +31,20 @@ namespace Cafe_OrderPoints_System
                 return;
             }
 
-
             if (LogIn.Users.ContainsKey(username))
             {
                 MessageBox.Show("Username is already taken.");
                 return;
             }
 
-
             LogIn.Users.Add(username, password);
             LogIn.Emails.Add(username, email);
 
             MessageBox.Show("Account created!");
 
-
             LogIn login = new LogIn();
             login.Show();
             this.Hide();
-        }
-
-        private void SignUp_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

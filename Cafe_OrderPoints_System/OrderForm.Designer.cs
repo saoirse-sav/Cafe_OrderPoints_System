@@ -41,6 +41,7 @@
             qtySnacks = new NumericUpDown();
             label5 = new Label();
             label6 = new Label();
+            btnBack = new Button();
             ((System.ComponentModel.ISupportInitialize)qtyDrinks).BeginInit();
             ((System.ComponentModel.ISupportInitialize)qtySnacks).BeginInit();
             SuspendLayout();
@@ -113,6 +114,7 @@
             btnOrder.TabIndex = 7;
             btnOrder.Text = "Order";
             btnOrder.UseVisualStyleBackColor = true;
+            btnOrder.Click += btnOrder_Click;
             // 
             // btnLogOut
             // 
@@ -122,6 +124,7 @@
             btnLogOut.TabIndex = 8;
             btnLogOut.Text = "Log Out";
             btnLogOut.UseVisualStyleBackColor = true;
+            btnLogOut.Click += btnLogOut_Click;
             // 
             // qtyDrinks
             // 
@@ -155,11 +158,22 @@
             label6.TabIndex = 12;
             label6.Text = "qty:";
             // 
+            // btnBack
+            // 
+            btnBack.Location = new Point(509, 266);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(116, 46);
+            btnBack.TabIndex = 13;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
+            // 
             // OrderForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(640, 380);
+            Controls.Add(btnBack);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(qtySnacks);
@@ -196,5 +210,6 @@
         private NumericUpDown qtySnacks;
         private Label label5;
         private Label label6;
+        private Button btnBack;
     }
 }

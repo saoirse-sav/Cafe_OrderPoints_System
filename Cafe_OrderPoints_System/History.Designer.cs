@@ -49,6 +49,7 @@
             btnBack.TabIndex = 1;
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += History_Load;
             // 
             // lblTitle
             // 

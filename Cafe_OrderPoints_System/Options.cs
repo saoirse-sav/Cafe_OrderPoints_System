@@ -1,13 +1,4 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace Cafe_OrderPoints_System
@@ -24,7 +15,6 @@ namespace Cafe_OrderPoints_System
 
         private void btnMakeOrder_Click(object sender, EventArgs e)
         {
-   
             OrderForm order = new OrderForm(LoggedUser);
             this.Hide();
             order.Show();
@@ -32,15 +22,21 @@ namespace Cafe_OrderPoints_System
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-          
             SignUp signup = new SignUp();
             this.Hide();
             signup.Show();
         }
 
+        private void btnShowHistory_Click(object sender, EventArgs e)
+        {
+            History history = new History(LoggedUser);
+            this.Hide();
+            history.Show();
+        }
+
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            Application.Exit();  
+            Application.Exit();
         }
     }
 }

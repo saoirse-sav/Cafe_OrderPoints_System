@@ -45,6 +45,7 @@
             btnSignup.TabIndex = 0;
             btnSignup.Text = "SIGN UP";
             btnSignup.UseVisualStyleBackColor = true;
+            btnSignup.Click += btnSignup_Click;
             // 
             // btnLogin
             // 
@@ -54,6 +55,7 @@
             btnLogin.TabIndex = 1;
             btnLogin.Text = "LOG IN";
             btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
             // label1
             // 
@@ -111,7 +113,7 @@
             Controls.Add(btnSignup);
             Name = "LogIn";
             Text = "LogIn";
-            Load += LogIn_Load;
+         
             ResumeLayout(false);
             PerformLayout();
         }

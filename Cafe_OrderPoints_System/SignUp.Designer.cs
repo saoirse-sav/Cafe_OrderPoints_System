@@ -48,6 +48,7 @@
             btnSignUp.TabIndex = 0;
             btnSignUp.Text = "Sign Up";
             btnSignUp.UseVisualStyleBackColor = true;
+            btnSignUp.Click += btnSignUp_Click;
             // 
             // label1
             // 
@@ -96,6 +97,7 @@
             // 
             txtPassword.Location = new Point(202, 150);
             txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(231, 27);
             txtPassword.TabIndex = 6;
             // 
@@ -110,6 +112,7 @@
             // 
             txtConfirm.Location = new Point(202, 191);
             txtConfirm.Name = "txtConfirm";
+            txtConfirm.PasswordChar = '*';
             txtConfirm.Size = new Size(231, 27);
             txtConfirm.TabIndex = 8;
             // 
@@ -139,7 +142,6 @@
             Controls.Add(btnSignUp);
             Name = "SignUp";
             Text = "SignUp";
-            Load += SignUp_Load;
             ResumeLayout(false);
             PerformLayout();
         }

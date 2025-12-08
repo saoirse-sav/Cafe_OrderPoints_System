@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cafe_OrderPoints_System
 {
-    internal class OrderRecord
+    public class OrderRecord
     {
         public string Drink { get; set; }
         public string Temperature { get; set; }

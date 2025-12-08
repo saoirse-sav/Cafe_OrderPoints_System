@@ -14,7 +14,7 @@ namespace Cafe_OrderPoints_System
 {
     public partial class OrderForm : Form
     {
-        private User LoggedUser; 
+        private User LoggedUser;
         private bool hasFreeOrder = false;
 
         public OrderForm(User user)
@@ -48,9 +48,7 @@ namespace Cafe_OrderPoints_System
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-
-            if (cmbDrink.SelectedIndex == -1 &&
-                cmbSnack.SelectedIndex == -1)
+            if (cmbDrink.SelectedIndex == -1 && cmbSnack.SelectedIndex == -1)
             {
                 MessageBox.Show("The form is empty. Please make an order or log out.");
                 return;
@@ -82,15 +80,19 @@ namespace Cafe_OrderPoints_System
                     LoggedUser.Points++;
             }
 
+            // GENERATE CLAIM NUMBER
+            Random rnd = new Random();
+            int claimNumber = rnd.Next(0, 300);
 
+            // ORDER MESSAGE
             string message = $"ORDER SUMMARY\n\n" +
                              $"Drink: {drink}\n" +
                              $"Temperature: {temp}\n" +
                              $"Drink Qty: {drinkQty}\n\n" +
                              $"Snack: {snack}\n" +
                              $"Snack Qty: {snackQty}\n\n" +
-                             $"Current Points: {LoggedUser.Points}\n";
-
+                             $"Current Points: {LoggedUser.Points}\n" +
+                             $"\nClaim Number: {claimNumber}\n";
 
             if (LoggedUser.Points >= 50)
             {
@@ -104,17 +106,24 @@ namespace Cafe_OrderPoints_System
 
             MessageBox.Show(message);
 
-
             LoggedUser.OrderHistory.Add(
                 new OrderRecord(drink, temp, drinkQty, snack, snackQty, DateTime.Now)
             );
         }
+
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             this.Hide();
             LogIn auth = new LogIn();
             auth.Show();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Options optionForm = new Options(LoggedUser);
+            this.Hide();
+            optionForm.Show();
         }
     }
 }
