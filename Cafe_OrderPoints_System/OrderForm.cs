@@ -10,12 +10,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
+
 namespace Cafe_OrderPoints_System
 {
     public partial class OrderForm : Form
     {
         private User LoggedUser;
         private bool hasFreeOrder = false;
+
+        // Price lists (in pesos)
+        Dictionary<string, int> drinkPrices = new Dictionary<string, int>()
+        {
+            { "Americano Latte", 95 },
+            { "Mocha", 145 },
+            { "Spanish Latte", 150 },
+            { "Vietnamese Latte", 150 },
+            { "Macchiato", 155 }
+        };
+
+        Dictionary<string, int> snackPrices = new Dictionary<string, int>()
+        {
+            { "Chocolate chip cookies", 75 },
+            { "Croissant", 85 },
+            { "Waffles", 110 },
+            { "Corndog", 65 },
+            { "Crunchy pan", 40 }
+        };
 
         public OrderForm(User user)
         {
@@ -56,7 +79,7 @@ namespace Cafe_OrderPoints_System
 
             // FREE ORDER CHECK
             bool isFreeOrder = false;
-            if (LoggedUser.Points >= 50)
+            if (LoggedUser.Points >= 10)
             {
                 isFreeOrder = true;
                 LoggedUser.Points = 0;
@@ -70,47 +93,59 @@ namespace Cafe_OrderPoints_System
             int drinkQty = (int)qtyDrinks.Value;
             int snackQty = (int)qtySnacks.Value;
 
-            // ADD POINTS ONLY IF NOT FREE ORDER
+            // POINTS SYSTEM
             if (!isFreeOrder)
             {
-                if (cmbDrink.SelectedIndex != -1)
+                if (drink != "None")
                     LoggedUser.Points++;
 
-                if (cmbSnack.SelectedIndex != -1)
+                if (snack != "None")
                     LoggedUser.Points++;
             }
 
-            // GENERATE CLAIM NUMBER
+            // PRICE CALCULATION
+            int drinkTotal = 0;
+            int snackTotal = 0;
+
+            if (!isFreeOrder)
+            {
+                if (drink != "None")
+                    drinkTotal = drinkPrices[drink] * drinkQty;
+
+                if (snack != "None")
+                    snackTotal = snackPrices[snack] * snackQty;
+            }
+
+            int totalPrice = isFreeOrder ? 0 : (drinkTotal + snackTotal);
+
+            // CLAIM NUMBER
             Random rnd = new Random();
             int claimNumber = rnd.Next(0, 300);
 
-            // ORDER MESSAGE
+            // SUMMARY MESSAGE
             string message = $"ORDER SUMMARY\n\n" +
                              $"Drink: {drink}\n" +
                              $"Temperature: {temp}\n" +
                              $"Drink Qty: {drinkQty}\n\n" +
                              $"Snack: {snack}\n" +
                              $"Snack Qty: {snackQty}\n\n" +
-                             $"Current Points: {LoggedUser.Points}\n" +
+                             $"Total Price: ₱{totalPrice}\n" +
+                             $"Points Now: {LoggedUser.Points}\n" +
                              $"\nClaim Number: {claimNumber}\n";
 
-            if (LoggedUser.Points >= 50)
-            {
-                message += "\nYou have reached 50 points! Your next order will be FREE.\n";
-            }
+            if (LoggedUser.Points >= 15)
+                message += "\nYou have reached 15 points! Your next order will be FREE.\n";
 
             if (isFreeOrder)
-            {
-                message += "\nThis order is FREE because you reached 50 points!\n";
-            }
+                message += "\nThis order is FREE because you reached 15 points!\n";
 
             MessageBox.Show(message);
 
+            
             LoggedUser.OrderHistory.Add(
-                new OrderRecord(drink, temp, drinkQty, snack, snackQty, DateTime.Now)
+                new OrderRecord(drink, temp, drinkQty, snack, snackQty, DateTime.Now, claimNumber, totalPrice)
             );
         }
-
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
@@ -127,3 +162,4 @@ namespace Cafe_OrderPoints_System
         }
     }
 }
+

@@ -27,12 +27,17 @@ namespace Cafe_OrderPoints_System
             signup.Show();
         }
 
-        private void btnShowHistory_Click(object sender, EventArgs e)
+        private void btnHistory_Click(object sender, EventArgs e)
         {
+       
             History history = new History(LoggedUser);
             this.Hide();
             history.Show();
         }
+
+        
+
+        
 
         private void btnLogout_Click(object sender, EventArgs e)
         {

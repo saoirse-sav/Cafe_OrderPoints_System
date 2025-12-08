@@ -13,28 +13,26 @@ namespace Cafe_OrderPoints_System
             LoggedUser = user;
         }
 
-        private void History_Load(object sender, EventArgs e)
+        private void btnLoad_Click(object sender, EventArgs e)
         {
-            lblTitle.Text = LoggedUser.Username + "'s Order History";
-
             lstHistory.Items.Clear();
 
-            if (LoggedUser.OrderHistory == null || LoggedUser.OrderHistory.Count == 0)
+            foreach (OrderRecord record in LoggedUser.OrderHistory)
             {
-                lstHistory.Items.Add("No orders have been made yet.");
-                return;
+                lstHistory.Items.Add(record.GetSummary());
             }
 
-            foreach (OrderRecord item in LoggedUser.OrderHistory)
+            if (LoggedUser.OrderHistory.Count == 0)
             {
-                lstHistory.Items.Add(item.ToString());
+                lstHistory.Items.Add("No order history found.");
             }
         }
-            private void btnBack_Click(object sender, EventArgs e)
+
+        private void btnBack_Click(object sender, EventArgs e)
         {
-            Options form = new Options(LoggedUser);
+            Options opt = new Options(LoggedUser);
             this.Hide();
-            form.Show();
+            opt.Show();
         }
     }
-    }
+}

@@ -92,7 +92,7 @@
             btnShowHistory.TabIndex = 5;
             btnShowHistory.Text = "Show Purchase History";
             btnShowHistory.UseVisualStyleBackColor = true;
-            btnShowHistory.Click += btnShowHistory_Click;
+            btnShowHistory.Click += btnHistory_Click;
             // 
             // btnLogout
             // 

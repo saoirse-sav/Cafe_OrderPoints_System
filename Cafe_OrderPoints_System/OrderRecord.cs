@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Cafe_OrderPoints_System
 {
@@ -16,21 +13,37 @@ namespace Cafe_OrderPoints_System
         public int SnackQty { get; set; }
 
         public DateTime Date { get; set; }
+        public int ClaimNumber { get; set; }
+        public double TotalPrice { get; set; }
 
-        public OrderRecord(string drink, string temp, int drinkQty, string snack, int snackQty, DateTime date)
+
+        public static List<OrderRecord> History = new List<OrderRecord>();
+
+      
+        public OrderRecord(
+            string drink,
+            string temperature,
+            int drinkQty,
+            string snack,
+            int snackQty,
+            DateTime date,
+            int claimNumber,
+            double totalPrice)
         {
             Drink = drink;
-            Temperature = temp;
+            Temperature = temperature;
             DrinkQty = drinkQty;
             Snack = snack;
             SnackQty = snackQty;
             Date = date;
+            ClaimNumber = claimNumber;
+            TotalPrice = totalPrice;
         }
 
-        public override string ToString()
+       
+        public string GetSummary()
         {
-            return $"{Date:g} | Drink: {Drink} ({Temperature}) x{DrinkQty} | Snack: {Snack} x{SnackQty}";
+            return $"{Date} - #{ClaimNumber} | Drink: {Drink} x{DrinkQty} ({Temperature}) | Snack: {Snack} x{SnackQty} | Total: ₱{TotalPrice}";
         }
-    
     }
 }
