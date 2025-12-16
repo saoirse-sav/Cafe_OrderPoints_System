@@ -40,35 +40,36 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(92, 9);
+            label1.Location = new Point(80, 7);
             label1.Name = "label1";
-            label1.Size = new Size(331, 40);
+            label1.Size = new Size(267, 30);
             label1.TabIndex = 0;
             label1.Text = "   “Enter and unwind. Here, even the smallest\r\n snack and simplest drink can brighten your day.”";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(153, 62);
+            label2.Location = new Point(134, 46);
             label2.Name = "label2";
-            label2.Size = new Size(199, 20);
+            label2.Size = new Size(158, 15);
             label2.TabIndex = 1;
             label2.Text = "“Taste joy, one sip at a time.”";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(86, 156);
+            label3.Location = new Point(75, 117);
             label3.Name = "label3";
-            label3.Size = new Size(337, 20);
+            label3.Size = new Size(268, 15);
             label3.TabIndex = 2;
             label3.Text = "Hello, Dear Customer, what would you like to do?";
             // 
             // btnMakeOrder
             // 
-            btnMakeOrder.Location = new Point(153, 194);
+            btnMakeOrder.Location = new Point(134, 146);
+            btnMakeOrder.Margin = new Padding(3, 2, 3, 2);
             btnMakeOrder.Name = "btnMakeOrder";
-            btnMakeOrder.Size = new Size(196, 39);
+            btnMakeOrder.Size = new Size(172, 29);
             btnMakeOrder.TabIndex = 3;
             btnMakeOrder.Text = "Make an Order";
             btnMakeOrder.UseVisualStyleBackColor = true;
@@ -76,9 +77,10 @@
             // 
             // btnAddCustomer
             // 
-            btnAddCustomer.Location = new Point(153, 258);
+            btnAddCustomer.Location = new Point(134, 194);
+            btnAddCustomer.Margin = new Padding(3, 2, 3, 2);
             btnAddCustomer.Name = "btnAddCustomer";
-            btnAddCustomer.Size = new Size(196, 39);
+            btnAddCustomer.Size = new Size(172, 29);
             btnAddCustomer.TabIndex = 4;
             btnAddCustomer.Text = "Add Customer";
             btnAddCustomer.UseVisualStyleBackColor = true;
@@ -86,9 +88,10 @@
             // 
             // btnShowHistory
             // 
-            btnShowHistory.Location = new Point(153, 321);
+            btnShowHistory.Location = new Point(134, 241);
+            btnShowHistory.Margin = new Padding(3, 2, 3, 2);
             btnShowHistory.Name = "btnShowHistory";
-            btnShowHistory.Size = new Size(196, 39);
+            btnShowHistory.Size = new Size(172, 29);
             btnShowHistory.TabIndex = 5;
             btnShowHistory.Text = "Show Purchase History";
             btnShowHistory.UseVisualStyleBackColor = true;
@@ -96,9 +99,10 @@
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(153, 385);
+            btnLogout.Location = new Point(134, 289);
+            btnLogout.Margin = new Padding(3, 2, 3, 2);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(196, 39);
+            btnLogout.Size = new Size(172, 29);
             btnLogout.TabIndex = 6;
             btnLogout.Text = "Log Out";
             btnLogout.UseVisualStyleBackColor = true;
@@ -106,9 +110,10 @@
             // 
             // Options
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(528, 450);
+            BackgroundImage = Properties.Resources.pexels_thelazyartist_1471120;
+            ClientSize = new Size(462, 338);
             Controls.Add(btnLogout);
             Controls.Add(btnShowHistory);
             Controls.Add(btnAddCustomer);
@@ -116,6 +121,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Options";
             Text = "Options";
             ResumeLayout(false);

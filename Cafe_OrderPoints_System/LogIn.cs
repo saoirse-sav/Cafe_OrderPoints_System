@@ -54,5 +54,10 @@ namespace Cafe_OrderPoints_System
             form.Show();
             this.Hide();
         }
+
+        private void LogIn_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

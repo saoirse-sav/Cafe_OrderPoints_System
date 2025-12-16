@@ -37,16 +37,19 @@
             // lstHistory
             // 
             lstHistory.FormattingEnabled = true;
-            lstHistory.Location = new Point(6, 12);
+            lstHistory.ItemHeight = 15;
+            lstHistory.Location = new Point(5, 9);
+            lstHistory.Margin = new Padding(3, 2, 3, 2);
             lstHistory.Name = "lstHistory";
-            lstHistory.Size = new Size(961, 284);
+            lstHistory.Size = new Size(841, 214);
             lstHistory.TabIndex = 0;
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(866, 302);
+            btnBack.Location = new Point(758, 226);
+            btnBack.Margin = new Padding(3, 2, 3, 2);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(101, 39);
+            btnBack.Size = new Size(88, 29);
             btnBack.TabIndex = 1;
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = true;
@@ -55,16 +58,17 @@
             // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.Location = new Point(25, 9);
+            lblTitle.Location = new Point(22, 7);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(0, 20);
+            lblTitle.Size = new Size(0, 15);
             lblTitle.TabIndex = 2;
             // 
             // btnLoadHistory
             // 
-            btnLoadHistory.Location = new Point(759, 302);
+            btnLoadHistory.Location = new Point(664, 226);
+            btnLoadHistory.Margin = new Padding(3, 2, 3, 2);
             btnLoadHistory.Name = "btnLoadHistory";
-            btnLoadHistory.Size = new Size(101, 39);
+            btnLoadHistory.Size = new Size(88, 29);
             btnLoadHistory.TabIndex = 3;
             btnLoadHistory.Text = "Load";
             btnLoadHistory.UseVisualStyleBackColor = true;
@@ -72,13 +76,15 @@
             // 
             // History
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(979, 352);
+            BackgroundImage = Properties.Resources.pexels_thelazyartist_1471120;
+            ClientSize = new Size(857, 264);
             Controls.Add(btnLoadHistory);
             Controls.Add(lblTitle);
             Controls.Add(btnBack);
             Controls.Add(lstHistory);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "History";
             Text = "History";
             ResumeLayout(false);

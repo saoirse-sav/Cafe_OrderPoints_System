@@ -49,68 +49,72 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 9);
+            label1.Location = new Point(10, 7);
             label1.Name = "label1";
-            label1.Size = new Size(184, 20);
+            label1.Size = new Size(148, 15);
             label1.TabIndex = 0;
             label1.Text = "Please choose your item/s:";
             // 
             // cmbDrink
             // 
             cmbDrink.FormattingEnabled = true;
-            cmbDrink.Location = new Point(79, 85);
+            cmbDrink.Location = new Point(69, 64);
+            cmbDrink.Margin = new Padding(3, 2, 3, 2);
             cmbDrink.Name = "cmbDrink";
-            cmbDrink.Size = new Size(241, 28);
+            cmbDrink.Size = new Size(211, 23);
             cmbDrink.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(35, 62);
+            label2.Location = new Point(31, 46);
             label2.Name = "label2";
-            label2.Size = new Size(53, 20);
+            label2.Size = new Size(43, 15);
             label2.TabIndex = 2;
             label2.Text = "Drinks:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(354, 62);
+            label3.Location = new Point(310, 46);
             label3.Name = "label3";
-            label3.Size = new Size(265, 20);
+            label3.Size = new Size(212, 15);
             label3.TabIndex = 3;
             label3.Text = "(choose the temperature of your drink)";
             // 
             // cmbTemp
             // 
             cmbTemp.FormattingEnabled = true;
-            cmbTemp.Location = new Point(367, 85);
+            cmbTemp.Location = new Point(321, 64);
+            cmbTemp.Margin = new Padding(3, 2, 3, 2);
             cmbTemp.Name = "cmbTemp";
-            cmbTemp.Size = new Size(241, 28);
+            cmbTemp.Size = new Size(211, 23);
             cmbTemp.TabIndex = 4;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(35, 163);
+            label4.Location = new Point(31, 122);
             label4.Name = "label4";
-            label4.Size = new Size(56, 20);
+            label4.Size = new Size(46, 15);
             label4.TabIndex = 5;
             label4.Text = "Snacks:";
             // 
             // cmbSnack
             // 
             cmbSnack.FormattingEnabled = true;
-            cmbSnack.Location = new Point(79, 186);
+            cmbSnack.Location = new Point(69, 140);
+            cmbSnack.Margin = new Padding(3, 2, 3, 2);
             cmbSnack.Name = "cmbSnack";
-            cmbSnack.Size = new Size(241, 28);
+            cmbSnack.Size = new Size(211, 23);
             cmbSnack.TabIndex = 6;
             // 
             // btnOrder
             // 
-            btnOrder.Location = new Point(509, 318);
+            btnOrder.Location = new Point(445, 238);
+            btnOrder.Margin = new Padding(3, 2, 3, 2);
             btnOrder.Name = "btnOrder";
-            btnOrder.Size = new Size(116, 46);
+            btnOrder.Size = new Size(102, 34);
             btnOrder.TabIndex = 7;
             btnOrder.Text = "Order";
             btnOrder.UseVisualStyleBackColor = true;
@@ -118,9 +122,10 @@
             // 
             // btnLogOut
             // 
-            btnLogOut.Location = new Point(12, 318);
+            btnLogOut.Location = new Point(10, 238);
+            btnLogOut.Margin = new Padding(3, 2, 3, 2);
             btnLogOut.Name = "btnLogOut";
-            btnLogOut.Size = new Size(116, 46);
+            btnLogOut.Size = new Size(102, 34);
             btnLogOut.TabIndex = 8;
             btnLogOut.Text = "Log Out";
             btnLogOut.UseVisualStyleBackColor = true;
@@ -128,41 +133,44 @@
             // 
             // qtyDrinks
             // 
-            qtyDrinks.Location = new Point(79, 114);
+            qtyDrinks.Location = new Point(69, 86);
+            qtyDrinks.Margin = new Padding(3, 2, 3, 2);
             qtyDrinks.Name = "qtyDrinks";
-            qtyDrinks.Size = new Size(150, 27);
+            qtyDrinks.Size = new Size(131, 23);
             qtyDrinks.TabIndex = 9;
             // 
             // qtySnacks
             // 
-            qtySnacks.Location = new Point(79, 220);
+            qtySnacks.Location = new Point(69, 165);
+            qtySnacks.Margin = new Padding(3, 2, 3, 2);
             qtySnacks.Name = "qtySnacks";
-            qtySnacks.Size = new Size(150, 27);
+            qtySnacks.Size = new Size(131, 23);
             qtySnacks.TabIndex = 10;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(40, 116);
+            label5.Location = new Point(35, 87);
             label5.Name = "label5";
-            label5.Size = new Size(33, 20);
+            label5.Size = new Size(27, 15);
             label5.TabIndex = 11;
             label5.Text = "qty:";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(40, 222);
+            label6.Location = new Point(35, 166);
             label6.Name = "label6";
-            label6.Size = new Size(33, 20);
+            label6.Size = new Size(27, 15);
             label6.TabIndex = 12;
             label6.Text = "qty:";
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(509, 266);
+            btnBack.Location = new Point(445, 200);
+            btnBack.Margin = new Padding(3, 2, 3, 2);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(116, 46);
+            btnBack.Size = new Size(102, 34);
             btnBack.TabIndex = 13;
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = true;
@@ -170,9 +178,10 @@
             // 
             // OrderForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(640, 380);
+            BackgroundImage = Properties.Resources.pexels_thelazyartist_1471120;
+            ClientSize = new Size(560, 285);
             Controls.Add(btnBack);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -187,6 +196,7 @@
             Controls.Add(label2);
             Controls.Add(cmbDrink);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "OrderForm";
             Text = "OrderForm";
             ((System.ComponentModel.ISupportInitialize)qtyDrinks).EndInit();
